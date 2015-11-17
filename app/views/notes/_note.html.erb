@@ -1,0 +1,28 @@
+<li>
+  <%= image_for(note.user) %>
+  <span class="user-name">
+    <%= note.user.name %>
+  </span>
+  <span class="content">
+    <%= link_to note.title, note_path(note.id) %>
+  </span>
+
+  <div>
+  <small>
+    <%= note.likes.count %>人がいいね！といっています
+  </small>
+</div>
+
+  <span>
+    <%= note.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+  </span>
+
+<%# 写真があるなら表示する。ないなら表示しない。 %>
+<% if note.photo.present? %>
+    <p>
+       <!--- Modelのstyleで指定した :midium など渡すことでサイズを指定できる -->
+       <%= image_tag note.photo.url(:medium) %>
+    </p>
+<% end %>
+
+</li>

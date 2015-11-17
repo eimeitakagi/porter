@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+  <ul class="notes">
+    <h2>タイムライン</h2>
+    <%= render @notes %>
+  </ul>
+<% else %>
+  <div class="top-wrapper">
+    <div class="register-wrapper">
+      <h1><%= @message %></h1>
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-large register-btn" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-large register-btn" %>
+    </div>
+  </div>
+<% end %>
