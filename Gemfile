@@ -23,3 +23,4 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # rails consoleを使いやすくするgem
 gem 'pry-rails'
+gem 'paperclip'

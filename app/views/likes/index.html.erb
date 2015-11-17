@@ -1,7 +1,10 @@
 <ul>
 <% @notes.each do |note| %>
-	<li>
-	<% link_to note.title, note_path(note.id) %>
+	<li style="border: 1px solid; margin: 10px; padding: 10px;">
+		<div><%= link_to note.title, note_path(note.id) %></div>
+		<div><%= note.content %></div>
+		<div><%= link_to note.like_count, liking_users_note_path(note.id) %>人がいいね！といっています</div>
+		<div><%= note.created_at %></div>
 	</li>
 <% end %>
 </ul>
