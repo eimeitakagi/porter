@@ -13,8 +13,8 @@ class HomeController < ApplicationController
 	def search
 	end
 	def search_result
-		@title = params[:title]
-		@content = params[:content]
-		notes = Note.all.to_a
+		title = params[:title]
+		content = params[:content]
+		@notes = Note.order("created_at DESC").where("title LIKE '%#{title}%' and content LIKE '%#{content}%'")
 	end
 end

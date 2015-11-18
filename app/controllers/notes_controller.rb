@@ -8,6 +8,7 @@ class NotesController < ApplicationController
 
 	def new
 		@note = Note.new
+		@note.like_count=0
 	end
 
 	def create
