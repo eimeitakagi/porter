@@ -4,11 +4,16 @@ class NotesController < ApplicationController
 	before_action :set_note, only: [:show, :edit, :update, :destroy, :liking_users]
 
 	def show
+		#count the number of access
+		@a = Note.find(params[:id])
+		@a.access_count += 1
+		@a.save
 	end
 
 	def new
 		@note = Note.new
-		@note.like_count=0
+		@note.like_count = 0
+		@note.access_count = 0
 	end
 
 	def create

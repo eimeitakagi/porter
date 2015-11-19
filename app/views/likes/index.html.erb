@@ -5,6 +5,11 @@
 		<div><%= note.content %></div>
 		<div><%= note.like_count %>人がいいね！といっています</div>
 		<div><%= note.created_at %></div>
+		<% if note.photo.present? %>
+		<a href="<%= note.photo.url(:medium) %>"><%= image_tag note.photo.url(:medium) %></a>
+		<% else %>
+			<div>写真がありません。</div>
+		<% end %>
 	</li>
 <% end %>
 </ul>

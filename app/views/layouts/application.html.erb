@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Porter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Porter</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="logo"><%= link_to "Porter", root_path %></div>
-        <% if user_signed_in? %>
-          <ul class="header-right">
-            <li><%= link_to "タイムライン", root_path %></li>
-            <li><%= link_to "マイページ", current_user %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          </ul>
-        <% else %>
-          <ul class="header-right">
-            <li><%= link_to "概要", about_path %></li>
-            <li><%= link_to "新規登録", new_user_registration_path %></li>
-            <li><%= link_to "ログイン", new_user_session_path %></li>
-          </ul>
-        <% end %>
-  <div class="container">
-    <p class="alert alert-success">
-      <%= notice %>
-    </p>
-    <p class="alert alert-danger">
-      <%= alert %>
-    </p>
-    <%= yield %>
-  </div>
-
-
+	<div id="logo"><%= link_to "Porter", root_path %></div>
+	<% if user_signed_in? %>
+		<ul class="header-right">
+			<li><%= link_to "タイムライン", root_path %></li>
+			<li><%= link_to "マイページ", current_user %></li>
+			<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+		</ul>
+	<% else %>
+		<ul class="header-right">
+			<li><%= link_to "概要", about_path %></li>
+			<li><%= link_to "新規登録", new_user_registration_path %></li>
+			<li><%= link_to "ログイン", new_user_session_path %></li>
+		</ul>
+	<% end %>
+	<div class="container">
+		<p class="alert alert-success">
+			<%= notice %>
+		</p>
+		<p class="alert alert-danger">
+			<%= alert %>
+		</p>
+		<%= yield %>
+	</div>
 </body>
 </html>
