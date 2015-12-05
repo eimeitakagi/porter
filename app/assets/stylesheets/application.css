@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .search{
+	position: absolute; 	
+	right: 10px;
+}
