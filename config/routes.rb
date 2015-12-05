@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
 	root "home#top"
 	get "/about" => "home#about"
-	get "/lanking" => "likes#index", as: "lanking"
 	get "/search" => "home#search", as: "search"
-	get "/search_result" => "home#search_result" 
+	get "/search_result" => "home#search_result"
 end

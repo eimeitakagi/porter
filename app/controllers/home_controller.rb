@@ -10,8 +10,10 @@ class HomeController < ApplicationController
 
 	def about
 	end
+
 	def search
 	end
+	
 	def search_result
 		title = params[:title]
 		content = params[:content]

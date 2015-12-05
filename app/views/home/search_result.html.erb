@@ -1,5 +1,6 @@
-<ul>
-<% @notes.each do |note| %>
+<% if @notes.present? %>
+	<ul>
+	<% @notes.each do |note| %>
 	<li style="border: solid 1px;">
 		<div><%= link_to note.title, note_path(note.id) %></div>
 		<div><%= note.content %></div>
@@ -7,9 +8,13 @@
 		<div><%= note.created_at %></div>
 		<% if note.photo.present? %>
 			<a href="<%= note.photo.url(:medium) %>"><%= image_tag note.photo.url(:medium) %></a>
-		<% else %>
+			<% else %>
 			<div>写真がありません</div>
+			<% end %>
+		</li>
 		<% end %>
-	</li>
+	</ul>
+<% else %>
+<h2>検索結果がありません。</h2>
+
 <% end %>
-</ul>
